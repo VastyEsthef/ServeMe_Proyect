@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+
+	<ui:composition template="/WEB-INF/templates/master.xhtml">
+		<ui:define name="content">
+			<h:form id="frm">
+				
+				<p:toolbar>
+					<f:facet name="right">
+						<p:commandButton value="Guardar" icon="ui-icon-disk"
+							action= "#{horarioController.guardarHorario()}" ajax= "false" />
+							
+						<p:commandButton value="Regresar" icon="ui-icon-disk"
+							action= "#{horarioController.editarHorario()}" ajax= "false" />
+					</f:facet>
+                	
+        		</p:toolbar>
+				
+				<p:panelGrid id= "panelHorario" columns="2" style="width:50%"  >
+				
+					
+					<p:outputLabel for="cbHorario1" value="Dia"/>
+        			<p:selectOneMenu id="cbHorario1"
+        				value = "#{horarioController.horario.dia}">
+            			<f:selectItem itemLabel="Elige un día" itemValue=""/>
+            			<f:selectItem itemLabel="Lunes" itemValue="Lunes"/>
+            			<f:selectItem itemLabel="Martes" itemValue="Martes"/>
+            			<f:selectItem itemLabel="Miercoles" itemValue="Miercoles"/>
+            			<f:selectItem itemLabel="Jueves" itemValue="Jueves"/>
+            			<f:selectItem itemLabel="Viernes" itemValue="Viernes"/>
+        			</p:selectOneMenu>
+					
+					
+					<p:outputLabel value="Hora" for="cbHorario2"/>
+        			<p:selectOneMenu id="cbHorario2" 
+        				value = "#{horarioController.horario.hora}">
+            			<f:selectItem itemLabel="Elige una hora" itemValue=""/>
+            			<f:selectItem itemLabel="1" itemValue="1"/>
+            			<f:selectItem itemLabel="2" itemValue="2"/>
+            			<f:selectItem itemLabel="3" itemValue="3"/>
+            			<f:selectItem itemLabel="4" itemValue="4"/>
+            			<f:selectItem itemLabel="5" itemValue="5"/>
+        			</p:selectOneMenu>
+        			
+        			<p:outputLabel for="cbHorario3" value="Am / Pm: "/>
+        			<p:selectOneMenu id="cbHorario3"
+        				value = "#{horarioController.horario.ampm}">
+            			<f:selectItem itemLabel="Elige un día" itemValue=""/>
+            			<f:selectItem itemLabel="AM" itemValue="Xbox One"/>
+            			<f:selectItem itemLabel="PM" itemValue="PS4"/>
+            			
+        			</p:selectOneMenu>
+				
+				</p:panelGrid>
+				
+				
+				
+				
+				<p:dataTable id="datTabHorarios"
+					emptyMessage="No existen productos registrados"
+					value="#{horarioController.horarios}" var="horario"
+					rowKey="#{horario.id}" selectionMode="single"
+					paginator="true"
+					rows="10">
+		
+
+					<p:column headerText="Id">
+						<p:outputLabel value="#{horario.id}" />
+					</p:column>
+					<p:column headerText="Am / Pm">
+						<p:outputLabel value="#{horario.ampm}" />
+					</p:column>
+					<p:column headerText="Día">
+						<p:outputLabel value="#{horario}" />
+					</p:column>
+					<p:column headerText="Hora">
+						<p:outputLabel value="#{horario.hora}" />
+					</p:column>
+
+				</p:dataTable>
+				
+				
+				
+				
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><ui:insert name="pageTitle">Programacion en Web</ui:insert></title>
+</h:head>
+
+<body>
+	<ui:insert name="header">
+		<div class="card">
+			<h:form>
+				<!-- <p:menubar autoDisplay="false">
+					<p:submenu label="Mantenedores" icon="ui-icon-pencil">
+						<p:menuitem icon="ui-icon-document" value="Productos"
+							url="/product/list.xhtml" />
+						<p:menuitem icon="ui-icon-document" value="Proveedores"
+							url="/" />
+					
+					</p:submenu>
+				</p:menubar> -->
+			
+				<p:menubar>
+            		<p:menuitem value="Perfil" icon="ui-icon-document" url="/"/> 
+            		<p:menuitem value="Horario" icon="pi pi-fw pi-calendar" url="/horario/insertar_listar.xhtml"/> 
+
+            		<f:facet name="options">
+                		<p:button value="Logout" icon="ui-icon-document"/>
+            		</f:facet>
+        		</p:menubar>
+			
+			
+			</h:form>
+		</div>
+	</ui:insert>
+
+	<ui:insert name="content">
+
+	</ui:insert>
+
+
+	<ui:insert name="footer">
+		<div>Copyright © hampcode, 2022. Todos los derechos reservados</div>
+	</ui:insert>
+</body>
+
+</html>
