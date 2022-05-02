@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><ui:insert name="pageTitle">Programacion en Web</ui:insert></title>
+</h:head>
+
+<body>
+	<ui:insert name="header">
+		<div class="card">
+			<h:form>
+				
+			
+				<p:toolbar>
+				
+					<p:toolbarGroup>
+                		<p:button value="Inicio" styleClass="ui-button-raised ui-button-inicio" />
+                
+				
+						<p:outputLabel for = "cboservicios" value="Servicio:"/>
+						<p:selectOneMenu id="cboservicios" value="">
+                    		<f:selectItem itemLabel="Seleccione un servicio" itemValue=""/>
+                    		<f:selectItem itemLabel="Pintura" itemValue="Pintura"/>
+            				<f:selectItem itemLabel="Gasfitería" itemValue="Gasfitería"/>
+            				<f:selectItem itemLabel="Electricidad" itemValue="Electricidad"/>
+                		</p:selectOneMenu>
+                
+            		</p:toolbarGroup>
+					
+					<p:toolbarGroup align="right">
+                		<p:button value="Cerrar sesionn" />
+            		</p:toolbarGroup>
+					
+					
+					<!-- <f:facet name="right">
+						<p:commandButton value="Guardar" icon="ui-icon-disk"
+							action= "#{horarioController.guardarHorario()}" ajax= "false" />
+							
+						<p:commandButton value="Regresar" icon="ui-icon-disk"
+							action= "#{horarioController.editarHorario()}" ajax= "false" />
+					</f:facet> -->
+                	
+        		</p:toolbar>
+			
+			
+			</h:form>
+		</div>
+	</ui:insert>
+
+	<ui:insert name="content">
+
+	</ui:insert>
+
+
+	<ui:insert name="footer">
+		<div>Copyright © ServiMe, 2022. Todos los derechos reservados</div>
+	</ui:insert>
+</body>
+
+</html>

@@ -5,13 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "trabajador")
-public class Trabajador {
+@Table(name = "cliente")
+public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,15 +24,9 @@ public class Trabajador {
 
 	private String correo;
 	private int telefono;
+	private String distrito;
+	private String contrasenia;
 
-	@ManyToOne
-	@JoinColumn(name = "distrito_id", nullable = false)
-	private Distrito distrito;
-	
-	@ManyToOne
-	@JoinColumn(name = "servicio_id", nullable = false)
-	private Servicio servicio;
-	
 	public int getId() {
 		return id;
 	}
@@ -83,12 +75,20 @@ public class Trabajador {
 		this.telefono = telefono;
 	}
 
-	public Distrito getDistrito() {
+	public String getDistrito() {
 		return distrito;
 	}
 
-	public void setDistrito(Distrito distrito) {
+	public void setDistrito(String distrito) {
 		this.distrito = distrito;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
 	}
 
 }

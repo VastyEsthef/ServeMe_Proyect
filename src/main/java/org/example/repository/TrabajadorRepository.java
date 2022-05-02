@@ -12,7 +12,7 @@ import javax.persistence.TypedQuery;
 import org.example.entities.Trabajador;
 
 @Named
-public class TrabajadorRepositorio implements Serializable{
+public class TrabajadorRepository implements Serializable{
 	
 private static final long serialVersionUID = 1L;
 	

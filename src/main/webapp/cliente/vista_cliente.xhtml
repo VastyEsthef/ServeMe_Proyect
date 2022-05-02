@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+
+	<ui:composition template="/WEB-INF/templates/master_cliente.xhtml">
+		<ui:define name="content">
+			
+			<h:form id="frm">
+				
+				
+				<!-- <p:toolbar>
+				
+					<f:facet name="right">
+						<p:commandButton value="Guardar" icon="ui-icon-disk"
+							action= "#{horarioController.guardarHorario()}" ajax= "false" />
+							
+						<p:commandButton value="Regresar" icon="ui-icon-disk"
+							url="/templates/master.xhtml" ajax= "false" />
+					</f:facet>
+                	
+        		</p:toolbar> -->
+        		
+        		
+        		<p:panelGrid id="PanGridDistrito" columns="2" style="width:25%">
+        		
+					<p:outputLabel for = "cbodistrito" value="Distrito: "/>
+					<p:selectOneMenu id="cbodistrito" value="">
+            			<f:selectItem itemLabel="Surco" itemValue="Surco"/>
+            			<f:selectItem itemLabel="Surquillo" itemValue="Surquillo"/>
+            			<f:selectItem itemLabel="La Molina" itemValue="La Molina"/>
+                	</p:selectOneMenu>
+				</p:panelGrid>
+        		
+        		<h2 id="title"> Lista de Trabajadores</h2>
+        		
+        		<p:dataTable id="datTabTrabajador"
+					emptyMessage="No existen trabajadores registrados"
+					value="" var="horario"
+					rowKey="" selectionMode="single"
+					paginator="true"
+					rows="10">
+		
+
+					<p:column headerText="Id">
+						<p:outputLabel value="" />
+					</p:column>
+					<p:column headerText="Nombre">
+						<p:outputLabel value="" />
+					</p:column>
+					<p:column headerText="Apellido Paterno">
+						<p:outputLabel value="" />
+					</p:column>
+					<p:column headerText="Apellido Materno">
+						<p:outputLabel value="" />
+					</p:column>
+					<p:column headerText="Distrito">
+						<p:outputLabel value="" />
+					</p:column>
+					
+				</p:dataTable>
+        		
+        		
+        		
+        		
+        		
+        		
+        		
+        		
+        		
+        		
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>

@@ -14,7 +14,7 @@ import org.example.entities.Distrito;
 
 
 @Named
-public class DistritoRepositorio implements Serializable {
+public class DistritoRepository implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
