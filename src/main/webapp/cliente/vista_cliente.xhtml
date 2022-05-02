@@ -67,9 +67,81 @@
         		
         		
         		
-        		
-        		
-        		
+        		<div class="card"> <h5 class="p-mt-0">Comentarios y Putntuaciones</h5> <p:tabView>
+
+
+				<p:tab title="Comentarios">
+					<p class="p-m-0"> <p:dataTable id="datTabComentarios"
+					emptyMessage=" No existen comentarios"
+					value="#{productController.products}" var="product"
+					rowKey="#{product.id}" selectionMode="single"
+					selection="#{productController.productSelected}" rows="8">
+
+					<p:column headerText="Usuario">
+						<p:outputLabel value="#{cliente.id}" />
+					</p:column>
+					<p:column headerText="Comentario">
+						<p:outputLabel value="#{servicio.comentario}" />
+					</p:column>
+
+
+
+				</p:dataTable> <h5>Publica tu comentario</h5> <p:inputTextarea rows="6" cols="33" />
+
+				<p:commandButton type="button" value="Publicar"
+					action="#{servicioController.newServicio()}" ajax="false" /> </p>
+				</p:tab>
+
+
+
+
+				<p:tab title="Puntuaciones">
+				<p class="p-m-0"> <h5> Calificacion general </h5> <p:rating
+					value="#{puntuacionControler.ratingFinal}" readonly="true" /> <h:form>
+					<h5> Califica el servicio</h5>
+					<p:growl id="messages" showDetail="true" />
+					</h:form> <p:growl id="messages" showDetail="true" /> <h5 class="p-mt-0">Basic</h5>
+				<p:rating value="#{ratingView.rating1}" /> </p>
+			</p:tab>
+		</p:tabView> </div>
+
+
+
+
+
+
+		<p:menubar autoDisplay="false">
+			<p:submenu label="Informacion" icon="ui-icon-pencil">
+				<p:menuitem icon="ui-icon-document" value="Contrato"
+					url="/commentPoint/informacion.xhtml" />
+
+			</p:submenu>
+
+
+
+
+		</p:menubar>
+
+		<div class="card"> <h5 class="p-mt-0">Default</h5> <p:tabView>
+			<p:tab title="Informacion">
+				<p class="p-m-0"> Lorem ipsum dolor sit amet, consectetur
+				adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+				exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+				esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+				cupidatat non proident, sunt in culpa qui officia deserunt mollit
+				anim id est laborum. </p>
+
+				<h5>PDF</h5>
+				<p:media value="/src/main/resources/contrato.pdf" width="100%"
+					height="300px">
+        Your browser can't display pdf, <h:outputLink
+						value="#{request.contextPath}/src/main/resources/contrato.pdf">click</h:outputLink> to download pdf instead.
+    </p:media>
+
+			</p:tab>
+		</p:tabView> </div>
         		
         		
         		
